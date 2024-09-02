@@ -1,5 +1,6 @@
 
 import WordContainer from "@/app/WordContainer";
+import {Keyboard} from "@/Keyboard";
 
 const allWords = [
     "APPLE", "BRICK", "CRATE", "DRIVE", "EPOCH", "FLARE", "GLASS", "HORSE", "IVORY", "JOKER",
@@ -39,28 +40,28 @@ export default function Home() {
     return (
         <>
 
-        <div className="container  flex flex-col w-4/5 justify-center border-2 border-green-400">
+        <div className="container bg-black rounded-xl drop-shadow-xl shadow-black flex flex-col w-[375px] justify-center">
 
 
-            <div className="title flex border-2 border-red-200  justify-center">
-                <h1 className='m-2 p-4 text-3xl font-bold'>Welcome to Jordle!</h1>
+            <div className="title my-6 flex justify-center">
+                <h1 className='m-2 p-4 text-3xl font-bold text-white'>Welcome to Jordle!</h1>
             </div>
 
 
-            <div className="flex flex-col all-guesses  border-blue-600 justify-center">
-                <div className="flex flex-col">
-                <div className="flex flex-col justify-center">
-                    {randomWords.map((word) =>
-                        <WordContainer key={word} word={word} />
-                    )}
+            <div className="flex flex-col all-guesses mb-8 justify-center">
+                {/*<div className="flex flex-col">*/}
+                    <div className="flex flex-col justify-center">
+                        {randomWords.map((word) =>
+                            <WordContainer key={word} word={word} />
+                        )}
 
-                </div>
+                    </div>
 
-                </div>
+                {/*</div>*/}
             </div>
 
-            <div className="flex flex-col actions border-2 border-amber-200 justify-center">
-
+            <div className="flex flex-col actions bg-blue-400 justify-center">
+                <Keyboard />
                 <button>Clear</button>
                 <button>Submit</button>
             </div>

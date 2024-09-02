@@ -11,7 +11,6 @@ console.log(letters)
             {letters.map((letter,index) =>
                 <Letter key={`${index} letter`} letter={letter }/>
             )}
-
         </div>
     )
 }
